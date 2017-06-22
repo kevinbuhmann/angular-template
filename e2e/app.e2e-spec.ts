@@ -9,6 +9,8 @@ describe('angular-template App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+
+    page.getParagraphText()
+      .then(text => { expect(text).toEqual('Welcome to app!!'); });
   });
 });
